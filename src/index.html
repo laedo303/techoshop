@@ -51,16 +51,17 @@
   <main class="main">
     <section class="catalog">
       <div class="container main__container">
-        <h2 class="catalog__title">Catalog</h2>
+        <h2 class="catalog__title">Каталог</h2>
 
         <div class="catalog__container">
           <div class="catalog__goods goods">
             <ul class="goods__list">
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -69,11 +70,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -82,11 +84,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -95,11 +98,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -108,11 +112,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -121,11 +126,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -134,11 +140,12 @@
                   </div>
                 </article>
               </li>
+
               <li class="goods__item">
                 <article class="goods-item">
                   <a href="card.html">
-                    <img src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
-                    <h3 class="goods-ite__title">Монитор AOC 24G2U/BK</h3>
+                    <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
+                    <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
 
                   <div class="goods-item__buy">
@@ -154,52 +161,64 @@
             <form class="filter__form">
               <h3 class="filter__title">Фильтры</h3>
 
-              <fieldset class="filter__field">
-                <legend class="filter__field-title">Цена</legend>
+              <div class="filter__fields-list">
+                <fieldset class="filter__field">
+                  <legend class="filter__field-title">Цена</legend>
 
-                <div class="filter__flex">
-                  <label><input class="filter__input" type="number" name="price-start" placeholder="от"></label>
-                  <label><input class="filter__input" type="number" name="price-end" placeholder="до"></label>
-                </div>
-              </fieldset>
+                  <div class="filter__flex">
+                    <label><input class="filter__input" type="number" name="price-start" placeholder="от"></label>
+                    <label><input class="filter__input" type="number" name="price-end" placeholder="до"></label>
+                  </div>
+                </fieldset>
 
-              <fieldset class="filter__field">
-                <legend class="filter__field-title">Категория</legend>
+                <fieldset class="filter__field">
+                  <legend class="filter__field-title">Категория</legend>
 
-                <label>
-                  <select name="category" class="filter__select">
-                    <option value="phone">Смартфоны</option>
-                    <option value="tab">Планшеты</option>
-                    <option value="clock">Умные часы</option>
-                    <option value="monoblock">Моноблоки</option>
-                    <option value="notebook">Ноутбуки</option>
-                  </select>
-                </label>
-              </fieldset>
-
-              <fieldset class="filter__field">
-                <legend class="filter__field-title">Диагональ</legend>
-
-                <div class="filter__flex">
-                  <label><input class="filter__input" type="number" name="diagonal-start" placeholder="от"></label>
-                  <label><input class="filter__input" type="number" name="diagonal-end" placeholder="до"></label>
-                </div>
-              </fieldset>
-
-              <fieldset class="filter__field">
-                <legend class="filter__field-title">Цвет</legend>
-
-                <div class="filter__flex">
                   <label>
-                    <input class="filter__checkbox" name="color" value="white" type="checkbox">Белый
-                    <input class="filter__checkbox" name="color" value="black" type="checkbox">Черный
-                    <input class="filter__checkbox" name="color" value="silver" type="checkbox">Серебристый
-                    <input class="filter__checkbox" name="color" value="red" type="checkbox">Красный
-                    <input class="filter__checkbox" name="color" value="green" type="checkbox">Зеленый
-                    <input class="filter__checkbox" name="color" value="gold" type="checkbox">Золотой
+                    <select name="category" class="filter__input filter__input_select">
+                      <option value="phone">Смартфоны</option>
+                      <option value="tab">Планшеты</option>
+                      <option value="clock">Умные часы</option>
+                      <option value="monoblock">Моноблоки</option>
+                      <option value="notebook">Ноутбуки</option>
+                    </select>
                   </label>
-                </div>
-              </fieldset>
+                </fieldset>
+
+                <fieldset class="filter__field">
+                  <legend class="filter__field-title">Диагональ</legend>
+
+                  <div class="filter__flex">
+                    <label><input class="filter__input" type="number" name="diagonal-start" placeholder="от"></label>
+                    <label><input class="filter__input" type="number" name="diagonal-end" placeholder="до"></label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="filter__field">
+                  <legend class="filter__field-title">Цвет</legend>
+
+                  <div class="filter__flex filter__flex_column">
+                    <label>
+                      <input class="filter__checkbox" name="color" value="white" type="checkbox">Белый
+                    </label>
+                    <label>
+                      <input class="filter__checkbox" name="color" value="black" type="checkbox">Черный
+                    </label>
+                    <label>
+                      <input class="filter__checkbox" name="color" value="silver" type="checkbox">Серебристый
+                    </label>
+                    <label>
+                      <input class="filter__checkbox" name="color" value="red" type="checkbox">Красный
+                    </label>
+                    <label>
+                      <input class="filter__checkbox" name="color" value="green" type="checkbox">Зеленый
+                    </label>
+                    <label>
+                      <input class="filter__checkbox" name="color" value="gold" type="checkbox">Золотой
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
 
               <button class="filter__apply" type="submit">Применить фильтр</button>
               <button class="filter__reset" type="submit">Очистить все</button>
