@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     gap: 30px;
+    margin-bottom: 50px;
   }
 
   &__logo-link {
@@ -60,5 +61,22 @@
     &:hover {
       color: $color-main;
     }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8%;
+  }
+  &__copyright-logo {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+  }
+  &__copyright-author {
+    max-width: 211px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
   }
 }
