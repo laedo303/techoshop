@@ -4,13 +4,14 @@ import './cart.html';
 import './index.scss';
 
 
-import Swiper, {Thumbs, Scrollbar} from 'swiper';
+import Swiper, {Thumbs, Scrollbar, Navigation, Pagination} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 const thumbSwiper = new Swiper('.card__slider-thumb', {
   spaceBetween: 44,
   slidesPerView: 3,
+
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
@@ -21,6 +22,7 @@ const thumbSwiper = new Swiper('.card__slider-thumb', {
 new Swiper('.card__image', {
   spaceBetween: 10,
   slidesPerView: 1,
+
   thumbs: {
     swiper: thumbSwiper,
     slideThumbActiveClass: 'card__thumb-btn_active',
@@ -31,4 +33,15 @@ new Swiper('.card__image', {
 new Swiper('.recommended__carousel', {
   spaceBetween: 30,
   slidesPerView: 5,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+   modules: [Navigation, Pagination]
 });
