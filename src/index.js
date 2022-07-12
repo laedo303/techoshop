@@ -4,11 +4,21 @@ import './cart.html';
 import './index.scss';
 
 
-import Swiper, {Thumbs, Scrollbar, Navigation, Pagination} from 'swiper';
+import Swiper, { Thumbs, Scrollbar, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import { pagination } from './modules/pagination';
+
+const paginationWrapper = document.querySelector('.pagination');
+
+const pageURL = new URL(location);
+
+const page = +pageURL.searchParams.get('page') || 1;
+
+pagination(paginationWrapper, 4, page, 6);
 
 
 const thumbSwiper = new Swiper('.card__slider-thumb', {
@@ -46,7 +56,7 @@ new Swiper('.recommended__carousel', {
     el: '.swiper-pagination',
     clickable: true,
   },
-   modules: [Navigation, Pagination]
+  modules: [Navigation, Pagination]
 });
 
 new Swiper('.catalog__pagination', {
@@ -62,5 +72,5 @@ new Swiper('.catalog__pagination', {
     el: '.swiper-pagination',
     clickable: true,
   },
-   modules: [Navigation, Pagination]
+  modules: [Navigation, Pagination]
 });
