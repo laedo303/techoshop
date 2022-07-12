@@ -18,6 +18,8 @@ const createItemPagination = (hrefLink, textContent, active) => {
 
 
 export const pagination = (wrapper, pages, page, count) => {
+  wrapper.textContent = '';
+
   const paginationList = document.createElement('ul');
   paginationList.className = 'pagination__list';
 
@@ -35,7 +37,7 @@ export const pagination = (wrapper, pages, page, count) => {
       if (isEnd) {
         n = pages - count + i + 1;
       } else {
-        n = page - count / 2 + i;
+        n = page - Math.floor(count / 2) + i;
       }
     }
 

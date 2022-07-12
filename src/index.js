@@ -3,23 +3,47 @@ import './card.html';
 import './cart.html';
 import './index.scss';
 
-
-import Swiper, { Thumbs, Scrollbar, Navigation, Pagination } from 'swiper';
+import Swiper, { Thumbs, Scrollbar } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 import { pagination } from './modules/pagination';
 
 const paginationWrapper = document.querySelector('.pagination');
 
 const pageURL = new URL(location);
-
 const page = +pageURL.searchParams.get('page') || 1;
 
-pagination(paginationWrapper, 4, page, 6);
+let isMobile = false;
 
+const startPagination = () => {
+  if (window.innerWidth <= 560) {
+    pagination(paginationWrapper, 12, page, 4);
+    isMobile = true;
+  } else {
+    pagination(paginationWrapper, 12, page, 6);
+    isMobile = false;
+  }
+}
+
+try {
+  startPagination();
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 560 && !isMobile) {
+      pagination(paginationWrapper, 12, page, 4);
+      isMobile = true;
+    }
+
+    if (window.innerWidth > 560 && isMobile) {
+      pagination(paginationWrapper, 12, page, 6);
+      isMobile = false;
+    }
+  })
+
+} catch (e) {
+  console.warn(e);
+  console.warn('это не главная страница');
+}
 
 const thumbSwiper = new Swiper('.card__slider-thumb', {
   spaceBetween: 44,
