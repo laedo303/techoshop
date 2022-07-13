@@ -12,7 +12,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Montserat, sans-serif;
+  font-family: Montserrat, sans-serif;
   color: $color-primary;
   background-color: $color-secondary;
 }
@@ -61,14 +61,6 @@ fieldset {
   transform: scale(0);
 }
 
-/*
-Пример контейнера
-Если контейнер 1180px по макету,
-то для max-width прибавляем паддинги 30px*2,
-в итоге 1240px
-Чтобы контент не прижимался к краям экрана
-*/
-
 .container {
   max-width: 1880px;
   padding: 0 30px;
@@ -103,16 +95,25 @@ fieldset {
   }
 
   @include mobile {
-    max-width: 320px;
-    padding: 0 10px;
+    padding-top: 35px;
   }
-}
-
-input[type="search"] {
-  -webkit-appearance: none;
-  outline-offset: 0px;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
   display: none;
+}
+
+.preload {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-color: $color-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    transform: rotate(0);
+    animation: rotation 1s infinite linear;
+  }
 }
