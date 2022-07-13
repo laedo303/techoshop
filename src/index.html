@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="img/favicon.png" type="image/png">
 
@@ -22,7 +21,7 @@
       </a>
 
       <form class="header__search search">
-        <input type="search" class="search__input">
+        <input type="search" class="search__input" name="search">
 
         <button class="search__button" type="submit" aria-label="найти товар">
           <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -50,16 +49,16 @@
 
   <main class="main">
     <section class="catalog">
-      <div class="container main__container">
+      <div class="container catalog__container">
         <h2 class="catalog__title">Каталог</h2>
 
-        <div class="catalog__container">
+        <div class="catalog__wrapper">
           <div class="catalog__goods goods">
             <ul class="goods__list">
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -73,7 +72,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -87,7 +86,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -101,7 +100,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -115,7 +114,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -129,7 +128,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -143,7 +142,7 @@
 
               <li class="goods__item">
                 <article class="goods-item">
-                  <a href="card.html">
+                  <a class="goods__link" href="card.html">
                     <img class="goods-item__image" src="img/monitor.jpg" alt="Монитор AOC 24G2U/BK">
                     <h3 class="goods-item__title">Монитор AOC 24G2U/BK</h3>
                   </a>
@@ -166,8 +165,12 @@
                   <legend class="filter__field-title">Цена</legend>
 
                   <div class="filter__flex">
-                    <label><input class="filter__input" type="number" name="price-start" placeholder="от"></label>
-                    <label><input class="filter__input" type="number" name="price-end" placeholder="до"></label>
+                    <label>
+                      <input class="filter__input" type="number" name="minprice" step="any" placeholder="от">
+                    </label>
+                    <label>
+                      <input class="filter__input" type="number" name="maxprice" step="any" placeholder="до">
+                    </label>
                   </div>
                 </fieldset>
 
@@ -175,7 +178,7 @@
                   <legend class="filter__field-title">Категория</legend>
 
                   <label>
-                    <select name="category" class="filter__input filter__input_select">
+                    <select class="filter__input filter__input_select" id="category" name="category">
                       <option value="all" selected>Все категории</option>
                       <option value="phone">Смартфоны</option>
                       <option value="tab">Планшеты</option>
@@ -190,8 +193,12 @@
                   <legend class="filter__field-title">Диагональ</legend>
 
                   <div class="filter__flex">
-                    <label><input class="filter__input" type="number" name="diagonal-start" placeholder="от"></label>
-                    <label><input class="filter__input" type="number" name="diagonal-end" placeholder="до"></label>
+                    <label>
+                      <input class="filter__input" type="number" name="mindisplay" step="any" placeholder="от">
+                    </label>
+                    <label>
+                      <input class="filter__input" type="number" name="maxdisplay" step="any" placeholder="до">
+                    </label>
                   </div>
                 </fieldset>
 
@@ -222,12 +229,14 @@
               </div>
 
               <button class="filter__apply" type="submit">Применить фильтр</button>
-              <button class="filter__reset" type="submit">Очистить все</button>
+
+              <button class="filter__reset" type="reset">Очистить все</button>
             </form>
           </aside>
 
 
           <div class=" catalog__pagination pagination"></div>
+
         </div>
       </div>
     </section>
@@ -237,39 +246,72 @@
     <h2 class="visually-hidden">Навигация подвала сайта</h2>
     <div class="container footer__container">
       <a class="footer__logo-link" href="/">
-        <img src="img/logo.svg" alt="Логотип Techno shop" class="footer__logo">
+        <img class="footer__logo" src="img/logo.svg" alt="Логотип Techno shop">
       </a>
 
       <div class="footer__column footer__catalog">
         <h3 class="footer__column-title">Каталог</h3>
+
         <ul class="footer__list footer__list_double">
-          <li class="footer__item"><a href="#" class="footer__link">Смартфоны</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Планшеты</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Умные часы</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Моноблоки</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Ноутбуки</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Электронные книги</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Мониторы</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Смарт-приставка</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Процессоры</a></li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Смартфоны</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Планшеты</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Умные часы</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Моноблоки</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Ноутбуки</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Электронные книги</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Мониторы</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Смарт-приставка</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Процессоры</a>
+          </li>
         </ul>
       </div>
 
       <div class="footer__column footer__customer">
         <h3 class="footer__column-title">Покупателям</h3>
+
         <ul class="footer__list">
-          <li class="footer__item"><a href="#" class="footer__link">Оплата заказа</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Условия доставки</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Условия возврата заказа</a></li>
-          <li class="footer__item"><a href="#" class="footer__link">Блог</a></li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Оплата заказа</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Условия доставки</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Условия возврата заказа</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Блог</a>
+          </li>
         </ul>
       </div>
 
       <div class="footer__column footer__contacts">
         <h3 class="footer__column-title">Контакты</h3>
+
         <ul class="footer__list footer__list_contacts">
-          <li class="footer__item footer__item_contact">Тел:<a href="tel:89149329223" class="footer__link">8(914)923-92-23</a></li>
-          <li class="footer__item footer__item_contact">Email:<a href="mailto:TechnoSHOP@gmail.com" class="footer__link">TechnoSHOP@gmail.com</a></li>
+          <li class="footer__item footer__item_contact">Тел:
+            <a href="tel:89149329223" class="footer__link">8(914)923-92-23</a>
+          </li>
+          <li class="footer__item footer__item_contact">Email:
+            <a href="mailto:TechnoSHOP@gmail.com" class="footer__link">TechnoSHOP@gmail.com</a>
+          </li>
         </ul>
 
         <ul class="footer__social social">
